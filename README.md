@@ -4,7 +4,7 @@ Jarvistark records approved software intent and derives implementation tasks and
 
 ## Use Jarvistark in Codex
 
-Follow the [plugin installation guide](apps/plugin/README.md), then open your app workspace in Codex. Type `$jarvistark` and select **Jarvistark Planning** in the skill picker, or send `$jarvistark:jarvistark` directly. Describe your app idea. The agent interviews you and prepares reviews for requirements, architecture, and tasks. Jarvistark opens your app’s plan in a local browser. Review the claims and checks there. If you ask to build, select **Start next task** and the same Codex session implements the reviewed task and records check evidence.
+Download the [Jarvistark 0.3.0 plugin](https://raw.githubusercontent.com/sachinsplanet/Jarvistark/v0.3.0/releases/jarvistark-codex-0.3.0.tar.gz). Follow the [plugin installation guide](apps/plugin/README.md), then open your app workspace in Codex. Type `$jarvistark` and select **Jarvistark Planning** in the skill picker, or send `$jarvistark:jarvistark` directly. Describe your app idea. The agent interviews you and prepares reviews for requirements, architecture, and tasks. Jarvistark opens your app’s plan in a local browser. Review the claims and checks there. If you ask to build, select **Start next task** and the same Codex session implements the reviewed task and records check evidence.
 
 ## Build from source
 
