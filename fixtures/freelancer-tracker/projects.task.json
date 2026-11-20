@@ -1,0 +1,11 @@
+{
+	"title": "Implement owned projects and hourly rates",
+	"needs": ["CLM-001", "CLM-002"],
+	"dependsOn": [],
+	"checks": [
+		{
+			"command": "node --test projects.test.mjs",
+			"expect": "Project creation, rate validation, and owner isolation tests pass"
+		}
+	]
+}

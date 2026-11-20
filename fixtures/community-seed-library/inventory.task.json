@@ -1,0 +1,62 @@
+{
+	"title": "Implement persistent seed packet inventory",
+	"needs": ["CLM-004"],
+	"dependsOn": [],
+	"execution": {
+		"outcome": "A local inventory module that records varieties, receives and withdraws packets, and reloads valid inventory after restart.",
+		"scope": [
+			"Implement the synchronous module and its behavioral tests for a single local process.",
+			"Validate every mutation before persisting it. Preserve state when an operation is rejected."
+		],
+		"design": {
+			"userFlows": [
+				"Register a variety, receive packets, withdraw packets, and reopen the inventory to see the saved balance."
+			],
+			"interfaces": [
+				{
+					"name": "SeedInventory",
+					"contract": "Export class SeedInventory from inventory.mjs. new SeedInventory(filePath) loads a JSON array or starts empty when the file is absent. addVariety(id, name, packets = 0), receive(id, packets), and withdraw(id, packets) return the saved {id, name, packets} record. list() returns detached records sorted by id. Methods are synchronous. Reject invalid inputs with an Error."
+				}
+			],
+			"dataRules": [
+				"IDs and names must be nonempty strings with no leading or trailing whitespace. IDs are unique. Unknown IDs are rejected.",
+				"Initial packet counts are nonnegative safe integers. Receive and withdraw amounts are positive safe integers. Reject overflow and withdrawal above the current balance.",
+				"Persist the JSON array atomically using a temporary file and rename. Reject malformed stored JSON or invalid or duplicate stored records. Returned records cannot mutate inventory."
+			]
+		},
+		"environment": {
+			"target": "Local app process in the selected workspace",
+			"runtime": "Node.js >=22",
+			"prerequisites": [
+				{
+					"name": "Node.js",
+					"status": "unverified",
+					"evidence": "The fixture needs the built-in test runner. Verify the runtime on the executing host.",
+					"verifyCommand": "node --version"
+				}
+			]
+		},
+		"repository": [
+			{
+				"path": "inventory.test.mjs",
+				"purpose": "Existing behavioral acceptance checks for the inventory interface."
+			}
+		],
+		"deliverables": [
+			{
+				"path": "inventory.mjs",
+				"description": "Persistent inventory module implementing the reviewed interface."
+			},
+			{
+				"path": "inventory.test.mjs",
+				"description": "Behavioral tests for mutations, rejected operations, and restart persistence."
+			}
+		]
+	},
+	"checks": [
+		{
+			"command": "node --test inventory.test.mjs",
+			"expect": "Variety creation, receiving, withdrawal, persistence, invalid input handling, duplicate and unknown IDs, detached return values, safe integer counts, and corrupt storage behavior pass."
+		}
+	]
+}

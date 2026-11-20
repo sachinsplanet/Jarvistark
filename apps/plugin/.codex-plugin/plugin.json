@@ -1,0 +1,13 @@
+{
+	"name": "jarvistark",
+	"version": "0.3.0",
+	"description": "Turn an app idea into reviewed requirements, architecture, and tasks, then implement with recorded check evidence.",
+	"skills": "./skills/",
+	"interface": {
+		"displayName": "Jarvistark",
+		"shortDescription": "Plan and build apps with reviewed requirements and verified tasks.",
+		"developerName": "Jarvistark",
+		"category": "Productivity",
+		"defaultPrompt": ["Use $jarvistark:jarvistark to plan an app from my idea."]
+	}
+}

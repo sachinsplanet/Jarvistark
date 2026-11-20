@@ -1,0 +1,1 @@
+Build a small freelancer tracker library. Each project has an owner and an hourly rate in cents. Only its owner may record hours or view earnings. Calculate total earnings across the owner's projects. Use in-memory storage for this workflow fixture.

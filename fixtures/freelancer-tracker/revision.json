@@ -1,0 +1,18 @@
+{
+	"id": "PRP-002",
+	"planner": {
+		"role": "host-agent",
+		"id": "fixture-planner"
+	},
+	"createdAt": "2026-11-16T11:00:00.000Z",
+	"ops": [
+		{
+			"op": "revise",
+			"key": "$rounded",
+			"target": "CLM-003",
+			"claim": {
+				"text": "Calculate earnings across the owner's projects, rounding the total to the nearest whole cent."
+			}
+		}
+	]
+}

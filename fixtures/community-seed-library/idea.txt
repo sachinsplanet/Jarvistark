@@ -1,0 +1,1 @@
+Community Seed Library volunteers need to add seed varieties, receive packets, and record withdrawals. Packet counts must be nonnegative integers. Inventory must survive restarting the local app.

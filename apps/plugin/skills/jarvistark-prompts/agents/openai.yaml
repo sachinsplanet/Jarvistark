@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Prompts"
+  short_description: "Compile executable plans and coding prompts"
+  default_prompt: "Use $jarvistark:jarvistark-prompts to compile my reviewed plan into executable coding prompts."

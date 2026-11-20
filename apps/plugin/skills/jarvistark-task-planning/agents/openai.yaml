@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Task Planning"
+  short_description: "Plan tasks with dependencies and checks"
+  default_prompt: "Use $jarvistark:jarvistark-task-planning to turn my approved requirements and architecture into tasks for review."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Intake and Requirements"
+  short_description: "Clarify ideas and review sourced requirements"
+  default_prompt: "Use $jarvistark:jarvistark-intake to clarify my idea and propose source-linked requirements for review."

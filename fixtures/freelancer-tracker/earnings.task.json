@@ -1,0 +1,11 @@
+{
+	"title": "Record hours and calculate owner earnings",
+	"needs": ["CLM-002", "CLM-003"],
+	"dependsOn": ["TSK-001"],
+	"checks": [
+		{
+			"command": "node --test projects.test.mjs earnings.test.mjs",
+			"expect": "Owner isolation, valid hours, and per-project earnings calculations pass"
+		}
+	]
+}

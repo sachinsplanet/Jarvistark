@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Architecture"
+  short_description: "Propose app architecture for review"
+  default_prompt: "Use $jarvistark:jarvistark-architecture to propose a stack, data model, and app structure from approved requirements and the environment report."

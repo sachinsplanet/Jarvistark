@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Planning"
+  short_description: "Plan apps with Jarvistark reviews"
+  default_prompt: "Use $jarvistark:jarvistark to turn my app idea into claims and tasks for review."

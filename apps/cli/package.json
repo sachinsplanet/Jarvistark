@@ -1,0 +1,14 @@
+{
+	"name": "@jarvistark/cli",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"bin": { "jarvistark": "./dist/main.js" },
+	"scripts": {
+		"build": "tsc && node -e \"require('node:fs').copyFileSync('../web/workspace-review.html', 'dist/workspace-review.html')\"",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run"
+	},
+	"dependencies": { "@jarvistark/core": "workspace:*" },
+	"devDependencies": { "@types/node": "^22.0.0" }
+}

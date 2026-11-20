@@ -1,0 +1,21 @@
+{
+	"name": "@jarvistark/core",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "tsc",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"zod": "^3.24.0"
+	},
+	"devDependencies": {
+		"typescript": "^5.6.0",
+		"vitest": "^2.1.0"
+	}
+}

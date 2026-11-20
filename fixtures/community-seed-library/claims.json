@@ -1,0 +1,82 @@
+{
+	"id": "PRP-001",
+	"planner": {
+		"role": "host-agent",
+		"id": "seed-library-fixture"
+	},
+	"createdAt": "2026-11-17T00:00:00.000Z",
+	"ops": [
+		{
+			"op": "add",
+			"key": "$requirement1",
+			"claim": {
+				"kind": "requirement",
+				"origin": "user-stated",
+				"text": "Community Seed Library volunteers need to add seed varieties, receive packets, and record withdrawals.",
+				"source": {
+					"type": "input-span",
+					"input": "input/original.md",
+					"start": 0,
+					"end": 102
+				}
+			}
+		},
+		{
+			"op": "add",
+			"key": "$requirement2",
+			"claim": {
+				"kind": "requirement",
+				"origin": "user-stated",
+				"text": "Packet counts must be nonnegative integers.",
+				"source": {
+					"type": "input-span",
+					"input": "input/original.md",
+					"start": 103,
+					"end": 146
+				}
+			}
+		},
+		{
+			"op": "add",
+			"key": "$requirement3",
+			"claim": {
+				"kind": "requirement",
+				"origin": "user-stated",
+				"text": "Inventory must survive restarting the local app.",
+				"source": {
+					"type": "input-span",
+					"input": "input/original.md",
+					"start": 147,
+					"end": 195
+				}
+			}
+		},
+		{
+			"op": "add",
+			"key": "$architecture",
+			"claim": {
+				"kind": "decision",
+				"origin": "recommended",
+				"text": "Implement a synchronous Node.js ESM inventory module for one local app process. Store a JSON array of {id, name, packets} records at a caller-supplied file path. Save validated changes through a temporary file and rename. Reject malformed stored records. Use Node's built-in test runner."
+			}
+		},
+		{
+			"op": "link",
+			"from": "$architecture",
+			"to": "$requirement1",
+			"rel": "derives-from"
+		},
+		{
+			"op": "link",
+			"from": "$architecture",
+			"to": "$requirement2",
+			"rel": "derives-from"
+		},
+		{
+			"op": "link",
+			"from": "$architecture",
+			"to": "$requirement3",
+			"rel": "derives-from"
+		}
+	]
+}

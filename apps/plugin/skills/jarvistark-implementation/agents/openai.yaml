@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Implementation"
+  short_description: "Implement and verify the next approved task"
+  default_prompt: "Use $jarvistark:jarvistark-implementation to build the next approved task, run its checks, and record the results."

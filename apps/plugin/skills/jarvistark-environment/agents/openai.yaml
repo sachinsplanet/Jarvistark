@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jarvistark Environment"
+  short_description: "Inspect project tools and dependencies"
+  default_prompt: "Use $jarvistark:jarvistark-environment to check what this project needs and what is already installed."

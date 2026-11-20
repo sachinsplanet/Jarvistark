@@ -1,0 +1,15 @@
+---
+name: jarvistark
+description: Turn a rough app idea into a reviewed executable plan and start approved work in the current Codex session. Use for a guided interview, workspace review, or a build from a Jarvistark plan.
+---
+
+Guide the user from an idea through requirements, architecture, and task review. Resume from the current app ledger. Open the local review window for each batch and wait for the person's decisions using the [review and build handoff](references/cli.md#workspace-review).
+
+1. **Open the project workspace.** Resolve and verify the [bundled CLI](references/cli.md). Use the app directory with an explicit `--workspace` and pass the verified invocation to each workflow skill. If a journal exists, use `status` to find the current review or task state. Leave `.jarvistark/` and generated plan files to Jarvistark.
+2. **Gather and review requirements.** Use `$jarvistark-intake` or the [intake skill](../jarvistark-intake/SKILL.md) to interview the user, record their sources, and prepare a requirements review. Proceed to design once the ledger shows sufficient accepted requirements and no blocking questions for the requested scope. A request for requirements review ends with the approved scope handoff.
+3. **Inspect and review architecture.** Use `$jarvistark-environment` or the [environment skill](../jarvistark-environment/SKILL.md) to prepare a workspace discovery report. Pass that report and the approved scope to `$jarvistark-architecture` or the [architecture skill](../jarvistark-architecture/SKILL.md). Give the person a separate design review. After design approval, use the environment skill's setup pass if the decisions change prerequisites.
+4. **Propose and review tasks.** Pass the current accepted requirements, architecture, and any setup findings to `$jarvistark-task-planning` or the [task planning skill](../jarvistark-task-planning/SKILL.md). Use `review --build` at this checkpoint if the user wants implementation. Route a returned build result directly to step 6. After **Return to Codex**, deliver the requested plan or handle the person’s feedback.
+5. **Compile the executable handoff.** Use the [prompt skill](../jarvistark-prompts/SKILL.md) to check `plan` for coverage and execution context, then compile the project and first eligible task after review. Run `validate` and report any remaining findings.
+6. **Act on the build choice.** For planning alone, return the reviewed plan. For a build request from an already approved plan, open `review --build`. Use the existing result when the final task review just returned. On `action: build`, use the [implementation skill](../jarvistark-implementation/SKILL.md) in this session, claim the returned dispatch ID, and execute its prompt in the selected workspace. The person's click authorizes that task. Report results from its recorded evidence.
+
+The person operates the review window. Chat feedback guides proposals. Read `status` after review to identify which items they accepted, rejected, or left pending.
